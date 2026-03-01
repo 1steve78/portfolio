@@ -13,10 +13,10 @@ const missions = [
         github: "#",
         live: "#",
         architecture: [
-            { step: "User Response", icon: <Monitor className="w-5 h-5 text-zinc-400" /> },
-            { step: "Next.js API", icon: <Bot className="w-5 h-5 text-emerald-400" /> },
-            { step: "Prisma -> PG", icon: <Database className="w-5 h-5 text-cyan-400" /> },
-            { step: "Mistral Eval", icon: <FileText className="w-5 h-5 text-purple-400" /> },
+            { step: "User Response", icon: <Monitor className="w-5 h-5 text-zinc-600 dark:text-zinc-400" /> },
+            { step: "Next.js API", icon: <Bot className="w-5 h-5 text-emerald-600 dark:text-emerald-400" /> },
+            { step: "Prisma -> PG", icon: <Database className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> },
+            { step: "Mistral Eval", icon: <FileText className="w-5 h-5 text-purple-600 dark:text-purple-400" /> },
         ]
     },
     {
@@ -27,10 +27,10 @@ const missions = [
         github: "#",
         live: "#",
         architecture: [
-            { step: "Discover", icon: <Monitor className="w-5 h-5 text-zinc-400" /> },
-            { step: "Next.js Edge", icon: <Bot className="w-5 h-5 text-emerald-400" /> },
-            { step: "Story Gen", icon: <FileText className="w-5 h-5 text-cyan-400" /> },
-            { step: "UI Render", icon: <Database className="w-5 h-5 text-purple-400" /> },
+            { step: "Discover", icon: <Monitor className="w-5 h-5 text-zinc-600 dark:text-zinc-400" /> },
+            { step: "Next.js Edge", icon: <Bot className="w-5 h-5 text-emerald-600 dark:text-emerald-400" /> },
+            { step: "Story Gen", icon: <FileText className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> },
+            { step: "UI Render", icon: <Database className="w-5 h-5 text-purple-600 dark:text-purple-400" /> },
         ]
     },
     {
@@ -41,10 +41,10 @@ const missions = [
         github: "#",
         live: "#",
         architecture: [
-            { step: "Resume Parsing", icon: <FileText className="w-5 h-5 text-zinc-400" /> },
-            { step: "Skill Extract", icon: <Bot className="w-5 h-5 text-emerald-400" /> },
-            { step: "Job Matching", icon: <Database className="w-5 h-5 text-cyan-400" /> },
-            { step: "RAG Guidance", icon: <Monitor className="w-5 h-5 text-purple-400" /> },
+            { step: "Resume Parsing", icon: <FileText className="w-5 h-5 text-zinc-600 dark:text-zinc-400" /> },
+            { step: "Skill Extract", icon: <Bot className="w-5 h-5 text-emerald-600 dark:text-emerald-400" /> },
+            { step: "Job Matching", icon: <Database className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> },
+            { step: "RAG Guidance", icon: <Monitor className="w-5 h-5 text-purple-600 dark:text-purple-400" /> },
         ]
     },
     {
@@ -55,10 +55,10 @@ const missions = [
         github: "#",
         live: "#",
         architecture: [
-            { step: "Knowledge Check", icon: <FileText className="w-5 h-5 text-zinc-400" /> },
-            { step: "Behavior Tracking", icon: <Monitor className="w-5 h-5 text-emerald-400" /> },
-            { step: "AI Analysis", icon: <Bot className="w-5 h-5 text-cyan-400" /> },
-            { step: "Validation", icon: <Database className="w-5 h-5 text-purple-400" /> },
+            { step: "Knowledge Check", icon: <FileText className="w-5 h-5 text-zinc-600 dark:text-zinc-400" /> },
+            { step: "Behavior Tracking", icon: <Monitor className="w-5 h-5 text-emerald-600 dark:text-emerald-400" /> },
+            { step: "AI Analysis", icon: <Bot className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> },
+            { step: "Validation", icon: <Database className="w-5 h-5 text-purple-600 dark:text-purple-400" /> },
         ]
     },
     {
@@ -69,10 +69,10 @@ const missions = [
         github: "https://github.com/1steve78/wanderlust",
         live: "#",
         architecture: [
-            { step: "EJS Render", icon: <Monitor className="w-5 h-5 text-zinc-400" /> },
-            { step: "Express/Passport", icon: <Bot className="w-5 h-5 text-emerald-400" /> },
-            { step: "MVC Controller", icon: <Database className="w-5 h-5 text-cyan-400" /> },
-            { step: "MongoDB", icon: <FileText className="w-5 h-5 text-purple-400" /> },
+            { step: "EJS Render", icon: <Monitor className="w-5 h-5 text-zinc-600 dark:text-zinc-400" /> },
+            { step: "Express/Passport", icon: <Bot className="w-5 h-5 text-emerald-600 dark:text-emerald-400" /> },
+            { step: "MVC Controller", icon: <Database className="w-5 h-5 text-cyan-600 dark:text-cyan-400" /> },
+            { step: "MongoDB", icon: <FileText className="w-5 h-5 text-purple-600 dark:text-purple-400" /> },
         ]
     }
 ];
@@ -90,10 +90,10 @@ export default function Projects() {
                     transition={{ duration: 0.6 }}
                     className="mb-16"
                 >
-                    <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-zinc-100">
+                    <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-zinc-100">
                         Classified Missions
                     </h1>
-                    <p className="text-zinc-400 text-lg">
+                    <p className="text-zinc-600 dark:text-zinc-400 text-lg">
                         A log of deployed systems, agentic architectures, and prototypes.
                     </p>
                 </motion.div>
@@ -108,18 +108,18 @@ export default function Projects() {
                             className="group relative"
                         >
                             {/* Left alignment line for desktop */}
-                            <div className="hidden sm:block absolute -left-8 top-0 bottom-0 w-px bg-zinc-800 group-hover:bg-cyan-500/50 transition-colors" />
+                            <div className="hidden sm:block absolute -left-8 top-0 bottom-0 w-px bg-zinc-300 dark:bg-zinc-800 group-hover:bg-cyan-500/50 transition-colors" />
 
-                            <div className="bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm hover:border-zinc-700 hover:bg-zinc-900/60 transition-all duration-300">
+                            <div className="bg-white/40 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-sm hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-white/60 dark:hover:bg-zinc-900/60 transition-all duration-300 shadow-sm dark:shadow-none">
                                 <div className="flex flex-col sm:flex-row justify-between items-start mb-6 gap-4">
-                                    <h2 className="text-2xl font-bold text-zinc-100 group-hover:text-cyan-400 transition-colors">
+                                    <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                                         {mission.title}
                                     </h2>
                                     <div className="flex gap-3">
-                                        <Link href={mission.github} className="p-2 bg-black rounded-lg border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 transition-all">
+                                        <Link href={mission.github} className="p-2 bg-white dark:bg-black rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-600 hover:bg-zinc-50 dark:hover:bg-transparent transition-all">
                                             <Github className="w-5 h-5" />
                                         </Link>
-                                        <Link href={mission.live} className="p-2 bg-black rounded-lg border border-zinc-800 text-zinc-400 hover:text-white hover:border-cyan-500 transition-all">
+                                        <Link href={mission.live} className="p-2 bg-white dark:bg-black rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-white hover:border-cyan-500 dark:hover:border-cyan-500 hover:bg-zinc-50 dark:hover:bg-transparent transition-all">
                                             <ArrowUpRight className="w-5 h-5" />
                                         </Link>
                                     </div>
@@ -127,30 +127,30 @@ export default function Projects() {
 
                                 <div className="grid sm:grid-cols-2 gap-8 mb-8">
                                     <div>
-                                        <h3 className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-2">The Problem</h3>
-                                        <p className="text-zinc-300 text-sm leading-relaxed">{mission.problem}</p>
+                                        <h3 className="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-500 font-semibold mb-2">The Problem</h3>
+                                        <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">{mission.problem}</p>
                                     </div>
                                     <div>
-                                        <h3 className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-2">The Architecture</h3>
-                                        <p className="text-zinc-300 text-sm leading-relaxed">{mission.solution}</p>
+                                        <h3 className="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-500 font-semibold mb-2">The Architecture</h3>
+                                        <p className="text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed">{mission.solution}</p>
                                     </div>
                                 </div>
 
                                 {/* Architecture Flow Diagram */}
-                                <div className="mb-8 p-4 bg-black/60 rounded-xl border border-zinc-800/50 overflow-x-auto">
-                                    <h3 className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-4 text-center">System Flow</h3>
+                                <div className="mb-8 p-4 bg-zinc-50 dark:bg-black/60 rounded-xl border border-zinc-200 dark:border-zinc-800/50 overflow-x-auto">
+                                    <h3 className="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-500 font-semibold mb-4 text-center">System Flow</h3>
                                     <div className="flex items-center justify-center min-w-[500px]">
                                         {mission.architecture.map((node, i) => (
                                             <div key={node.step} className="flex items-center">
                                                 <div className="flex flex-col items-center gap-2">
-                                                    <div className="p-3 bg-zinc-900 border border-zinc-700 rounded-lg shadow-lg">
+                                                    <div className="p-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 rounded-lg shadow-sm dark:shadow-lg">
                                                         {node.icon}
                                                     </div>
-                                                    <span className="text-[10px] sm:text-xs font-mono text-zinc-400">{node.step}</span>
+                                                    <span className="text-[10px] sm:text-xs font-mono text-zinc-600 dark:text-zinc-400">{node.step}</span>
                                                 </div>
                                                 {i < mission.architecture.length - 1 && (
-                                                    <div className="w-12 h-px bg-zinc-700 mx-2 relative">
-                                                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t border-r border-zinc-500 rotate-45" />
+                                                    <div className="w-12 h-px bg-zinc-300 dark:bg-zinc-700 mx-2 relative">
+                                                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t border-r border-zinc-400 dark:border-zinc-500 rotate-45" />
                                                     </div>
                                                 )}
                                             </div>
@@ -161,7 +161,7 @@ export default function Projects() {
                                 {/* Tech Stack */}
                                 <div className="flex flex-wrap gap-2">
                                     {mission.techStack.map(tech => (
-                                        <span key={tech} className="px-3 py-1 bg-zinc-800/50 text-zinc-300 text-xs font-mono rounded-md border border-zinc-700/50">
+                                        <span key={tech} className="px-3 py-1 bg-zinc-100 dark:bg-zinc-800/50 text-zinc-700 dark:text-zinc-300 text-xs font-mono rounded-md border border-zinc-200 dark:border-zinc-700/50">
                                             {tech}
                                         </span>
                                     ))}
