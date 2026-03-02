@@ -31,7 +31,7 @@ export default function EncryptedContact() {
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                     disabled={isInitializing}
-                    className="relative group w-full flex flex-col items-center justify-center p-8 sm:p-12 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black hover:border-cyan-500/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(6,182,212,0.15)] disabled:opacity-80 disabled:cursor-wait"
+                    className="relative group w-full flex flex-col items-center justify-center p-6 sm:p-12 rounded-3xl overflow-hidden border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-black hover:border-cyan-500/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(6,182,212,0.15)] disabled:opacity-80 disabled:cursor-wait"
                 >
                     {/* Animated Background Gradients */}
                     <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -61,13 +61,13 @@ export default function EncryptedContact() {
                             </AnimatePresence>
                         </div>
 
-                        <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight flex items-center gap-2">
+                        <h2 className="text-xl sm:text-3xl font-bold text-zinc-900 dark:text-white tracking-tight flex items-center gap-2 text-center">
                             {isInitializing ? (
                                 <span className="text-cyan-400">Negotiating Handshake...</span>
                             ) : (
                                 <>
-                                    <Terminal className="w-5 h-5 text-cyan-400 hidden sm:block" />
-                                    Initialize Encrypted Channel
+                                    <Terminal className="w-5 h-5 text-cyan-400 hidden sm:block shrink-0" />
+                                    <span>Initialize Encrypted Channel</span>
                                 </>
                             )}
                         </h2>

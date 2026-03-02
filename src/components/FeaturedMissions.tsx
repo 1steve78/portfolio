@@ -53,7 +53,7 @@ export default function FeaturedMissions() {
                         &gt; STATUS: CLASSIFIED_SUCCESS
                     </div>
 
-                    <h3 className="text-3xl sm:text-5xl font-bold text-zinc-900 dark:text-white mb-2 tracking-tight group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
+                    <h3 className="text-2xl sm:text-5xl font-bold text-zinc-900 dark:text-white mb-2 tracking-tight group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
                         {featuredMission.title}
                     </h3>
                     <h4 className="text-lg text-zinc-700 dark:text-zinc-300 font-medium mb-4">
@@ -72,7 +72,7 @@ export default function FeaturedMissions() {
                         ))}
                     </div>
 
-                    <Link href={featuredMission.link} className="flex items-center gap-2 w-fit px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-black font-semibold rounded-xl hover:bg-cyan-600 dark:hover:bg-cyan-400 transition-colors duration-300 group/btn">
+                    <Link href={featuredMission.link} className="flex items-center justify-center gap-2 w-full sm:w-fit px-4 sm:px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-black font-semibold rounded-xl hover:bg-cyan-600 dark:hover:bg-cyan-400 transition-colors duration-300 group/btn">
                         <span>Access Mission Report</span>
                         <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </Link>

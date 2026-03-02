@@ -72,7 +72,7 @@ function BentoCard({ children, delay, className = "", hoverColorClass = "group-h
         rotateY,
         transformStyle: "preserve-3d"
       }}
-      className={`group relative p-6 sm:p-8 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl transition-all duration-300 overflow-hidden ${hoverColorClass} ${className}`}
+      className={`group relative p-5 sm:p-8 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl transition-all duration-300 overflow-hidden ${hoverColorClass} ${className}`}
     >
       <div className="relative z-10 h-full flex flex-col" style={{ transform: "translateZ(20px)" }}>{children}</div>
       {/* Subtle inner glow */}
@@ -176,7 +176,7 @@ export default function Home() {
             >
               <Link
                 href="/projects"
-                className="group relative w-full flex items-center justify-between p-6 sm:p-8 bg-zinc-100 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
+                className="group relative w-full flex items-center justify-between p-5 sm:p-8 bg-zinc-100 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-200 dark:from-zinc-200 to-zinc-300 dark:to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative z-10 text-zinc-900 text-xl sm:text-2xl font-bold tracking-tight">Access Missions</span>
@@ -195,7 +195,7 @@ export default function Home() {
             >
               <Link
                 href="/capabilities"
-                className="group relative w-full flex items-center justify-between p-6 sm:p-8 bg-white dark:bg-black border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-cyan-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300"
+                className="group relative w-full flex items-center justify-between p-5 sm:p-8 bg-white dark:bg-black border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-cyan-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 dark:from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="relative z-10 text-zinc-700 dark:text-zinc-300 text-lg sm:text-xl font-medium tracking-wide flex items-center gap-3">
@@ -211,19 +211,19 @@ export default function Home() {
 
           {/* 6. Social Links */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 w-full mb-8">
-            <Link href="https://github.com/1steve78" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-zinc-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300">
+            <Link href="https://github.com/1steve78" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-zinc-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300">
               <Github className="w-8 h-8 text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white mb-3 transition-colors duration-300" />
               <span className="text-zinc-700 dark:text-zinc-300 font-medium tracking-wide text-sm sm:text-base">GitHub</span>
             </Link>
-            <Link href="https://www.linkedin.com/in/md-yasin-alam-895039267" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-blue-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
+            <Link href="https://www.linkedin.com/in/md-yasin-alam-895039267" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-blue-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
               <Linkedin className="w-8 h-8 text-zinc-500 dark:text-zinc-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 mb-3 transition-colors duration-300" />
               <span className="text-zinc-700 dark:text-zinc-300 font-medium tracking-wide text-sm sm:text-base">LinkedIn</span>
             </Link>
-            <Link href="https://leetcode.com/u/yasin_1/" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-yellow-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)]">
+            <Link href="https://leetcode.com/u/yasin_1/" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-yellow-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)]">
               <Code2 className="w-8 h-8 text-zinc-500 dark:text-zinc-400 group-hover:text-yellow-500 dark:group-hover:text-yellow-400 mb-3 transition-colors duration-300" />
               <span className="text-zinc-700 dark:text-zinc-300 font-medium tracking-wide text-sm sm:text-base">LeetCode</span>
             </Link>
-            <Link href="https://codeforces.com/profile/MD_YASIN" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-red-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)]">
+            <Link href="https://codeforces.com/profile/MD_YASIN" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-red-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)]">
               <TerminalSquare className="w-8 h-8 text-zinc-500 dark:text-zinc-400 group-hover:text-red-500 dark:group-hover:text-red-400 mb-3 transition-colors duration-300" />
               <span className="text-zinc-700 dark:text-zinc-300 font-medium tracking-wide text-sm sm:text-base">Codeforces</span>
             </Link>
