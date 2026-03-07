@@ -6,11 +6,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const featuredMission = {
-    title: "Espektro - Techno-Management Fest",
-    role: "Lead Full-Stack Architect",
-    desc: "Developed the entire backend infrastructure and real-time event management system for KGEC's annual fest. Handled 5000+ registrations securely.",
-    stack: ["Next.js", "Express.js", "MongoDB", "TailwindCSS", "Socket.io"],
-    image: "https://res.cloudinary.com/deznttoin/image/upload/v1739886283/espektro/home_drst3l.png",
+    title: "TrustLens AI",
+    role: "AI Powered Cybersafety Platform",
+    desc: "Built an AI-driven scam simulation platform with adaptive attacker behavior. Analyzes manipulation tactics (urgency, authority) in real-time with a scalable Next.js and PostgreSQL backend.",
+    stack: ["Next.js", "Mistral AI", "Prisma", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
     link: "/projects",
     color: "cyan"
 };
@@ -35,21 +35,12 @@ export default function FeaturedMissions() {
                 {/* Abstract holographic glow behind the content */}
                 <div className="absolute inset-x-0 -top-40 h-80 bg-cyan-600/20 rounded-full blur-[100px] pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50" />
 
-                {/* Background Image (darkened) */}
-                <div className="absolute inset-0 z-0 h-full w-full">
-                    <Image
-                        src={featuredMission.image}
-                        alt={featuredMission.title}
-                        fill
-                        className="object-cover object-top opacity-30 group-hover:opacity-40 transition-opacity duration-500"
-                    />
-                    {/* Gradient Overlay to ensure text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 dark:from-black dark:via-black/80 to-transparent" />
-                </div>
+                {/* Simple subtle background gradient instead of image */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-transparent pointer-events-none" />
 
                 {/* Content */}
                 <div className="relative z-10 w-full h-full flex flex-col justify-end p-6 sm:p-10">
-                    <div className="inline-block px-3 py-1 bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 text-xs font-mono rounded-full mb-4 w-fit">
+                    <div className="inline-block px-3 py-1 bg-cyan-500/10 dark:bg-cyan-500/20 border border-cyan-500/20 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-400 text-xs font-mono rounded-full mb-4 w-fit">
                         &gt; STATUS: CLASSIFIED_SUCCESS
                     </div>
 
