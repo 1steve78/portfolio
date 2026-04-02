@@ -1,19 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import CursorFx from "@/components/CursorFx";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Md Yasin | AI Systems & Agent Architect",
@@ -28,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 selection:bg-cyan-500/30 min-h-screen pt-16 transition-colors duration-300`}
+        className="antialiased bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 selection:bg-cyan-500/30 min-h-screen pt-16 transition-colors duration-300"
       >
         <ThemeProvider
           attribute="class"
