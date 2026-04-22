@@ -158,27 +158,27 @@ export default function TerminalIntro() {
     return (
         <div
             ref={scrollContainerRef}
-            className="w-full h-full p-6 font-mono text-sm sm:text-base text-zinc-800 dark:text-zinc-300 relative overflow-y-auto custom-scrollbar cursor-text"
+            className="w-full h-full p-6 font-mono text-sm sm:text-base text-tx-primary relative overflow-y-auto custom-scrollbar cursor-text"
             onClick={() => inputRef.current?.focus()}
         >
             {/* Window controls */}
-            <div className="flex gap-2 mb-6 sticky top-0 bg-white/80 dark:bg-black/80 backdrop-blur pb-2 z-10 -mt-2 -mx-2 px-2 pt-2">
+            <div className="flex gap-2 mb-6 sticky top-0 bg-surface/80 backdrop-blur pb-2 z-10 -mt-2 -mx-2 px-2 pt-2">
                 <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                <div className="ml-auto text-xs text-zinc-500">terminal@yasin-lab ~</div>
+                <div className="ml-auto text-xs text-tx-muted">terminal@yasin-lab ~</div>
             </div>
 
             <div className="flex flex-col space-y-2 relative z-0">
                 {/* Boot Sequence */}
                 {displayedLines.map((line, index) => (
                     <div key={`boot-${index}`} className="flex">
-                        <span className={line.includes("Ready") ? "text-emerald-600 dark:text-emerald-400" : "text-zinc-800 dark:text-zinc-300"}>{line}</span>
+                        <span className={line.includes("Ready") ? "text-accent-pop" : "text-tx-primary"}>{line}</span>
                         {!bootComplete && index === currentLineIndex && (
                             <motion.span
                                 animate={{ opacity: [1, 0] }}
                                 transition={{ repeat: Infinity, duration: 0.8 }}
-                                className="w-2 h-5 bg-cyan-600 dark:bg-cyan-400 ml-1 inline-block align-middle"
+                                className="w-2 h-5 bg-accent-pop ml-1 inline-block align-middle"
                             />
                         )}
                     </div>
@@ -188,8 +188,8 @@ export default function TerminalIntro() {
                 {bootComplete && history.map((item, i) => (
                     <div key={`hist-${i}`} className="flex flex-col space-y-1 mb-2">
                         <div className="flex">
-                            <span className="text-cyan-600 dark:text-cyan-400 mr-2">guest@yasin-lab:~$</span>
-                            <span className="text-black dark:text-white">{item.command}</span>
+                            <span className="text-accent-pop mr-2">guest@yasin-lab:~$</span>
+                            <span className="text-tx-primary">{item.command}</span>
                         </div>
                         {item.output}
                     </div>
@@ -198,14 +198,14 @@ export default function TerminalIntro() {
                 {/* Active Input Line */}
                 {bootComplete && (
                     <form onSubmit={handleCommand} className="flex mt-2 pb-4">
-                        <span className="text-cyan-600 dark:text-cyan-400 mr-2 shrink-0">guest@yasin-lab:~$</span>
+                        <span className="text-accent-pop mr-2 shrink-0">guest@yasin-lab:~$</span>
                         <div className="relative flex-1 flex items-center">
                             <input
                                 ref={inputRef}
                                 type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                className="w-full bg-transparent outline-none border-none text-black dark:text-white font-mono break-all"
+                                className="w-full bg-transparent outline-none border-none text-tx-primary font-mono break-all"
                                 autoComplete="off"
                                 spellCheck="false"
                                 autoFocus
@@ -215,7 +215,7 @@ export default function TerminalIntro() {
                                 <motion.span
                                     animate={{ opacity: [1, 0] }}
                                     transition={{ repeat: Infinity, duration: 0.8 }}
-                                    className="absolute left-0 top-0.5 w-2 h-5 bg-cyan-400 pointer-events-none"
+                                    className="absolute left-0 top-0.5 w-2 h-5 bg-accent-pop pointer-events-none"
                                 />
                             )}
                         </div>

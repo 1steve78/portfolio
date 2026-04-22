@@ -16,20 +16,20 @@ const pillars = [
   {
     title: "AI Systems & Gen AI",
     description: "Architecting neural networks and custom LLM integrations for enterprise scale.",
-    icon: <BrainCircuit className="w-8 h-8 text-cyan-400 group-hover:scale-110 transition-transform duration-300" />,
-    color: "group-hover:border-cyan-500/50 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]"
+    icon: <BrainCircuit className="w-8 h-8 text-tx-primary group-hover:text-accent-pop group-hover:scale-110 transition-all duration-300" />,
+    color: "group-hover:border-accent-pop group-hover:shadow-[0_0_24px_var(--accent-glow)]"
   },
   {
     title: "Full-Stack",
     description: "High-performance React & Node.js systems. Scalable architectures from database to UI.",
-    icon: <Workflow className="w-8 h-8 text-purple-400 group-hover:scale-110 transition-transform duration-300" />,
-    color: "group-hover:border-purple-500/50 group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+    icon: <Workflow className="w-8 h-8 text-tx-primary group-hover:text-accent-pop group-hover:scale-110 transition-all duration-300" />,
+    color: "group-hover:border-accent-pop group-hover:shadow-[0_0_24px_var(--accent-glow)]"
   },
   {
     title: "Competitive",
     description: "Algorithmic problem solving & logic. Live metrics synced directly from primary platforms.",
-    icon: <Cpu className="w-8 h-8 text-emerald-400 group-hover:scale-110 transition-transform duration-300" />,
-    color: "group-hover:border-emerald-500/50 group-hover:shadow-[0_0_30px_rgba(16,185,129,0.15)]"
+    icon: <Cpu className="w-8 h-8 text-tx-primary group-hover:text-accent-pop group-hover:scale-110 transition-all duration-300" />,
+    color: "group-hover:border-accent-pop group-hover:shadow-[0_0_24px_var(--accent-glow)]"
   },
 ];
 
@@ -72,24 +72,25 @@ function BentoCard({ children, delay, className = "", hoverColorClass = "group-h
         rotateY,
         transformStyle: "preserve-3d"
       }}
-      className={`group relative p-5 sm:p-8 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl transition-all duration-300 overflow-hidden ${hoverColorClass} ${className}`}
+      className={`group relative p-5 sm:p-8 bg-surface border border-border-token rounded-2xl transition-all duration-300 overflow-hidden ${hoverColorClass} ${className}`}
     >
       <div className="relative z-10 h-full flex flex-col" style={{ transform: "translateZ(20px)" }}>{children}</div>
       {/* Subtle inner glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-tx-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
     </motion.div>
   );
 }
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-50 dark:bg-[#050505] flex flex-col items-center justify-center p-4 sm:p-8 lg:p-12 relative overflow-hidden font-sans">
+    <main className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 lg:p-12 relative overflow-hidden font-sans">
       <GlobalEasterEggs />
 
-      {/* Background glowing/mesh effects */}
-      <div className="fixed inset-0 bg-[url('/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
-      <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-cyan-600/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-purple-600/10 rounded-full blur-[150px] pointer-events-none" />
+      {/* Background noise effect with smooth fade-out at edges */}
+      <div 
+        className="fixed inset-0 bg-[url('/noise.svg')] opacity-15 pointer-events-none mix-blend-overlay" 
+        style={{ WebkitMaskImage: "radial-gradient(ellipse at center, black, transparent 80%)", maskImage: "radial-gradient(ellipse at center, black, transparent 80%)" }}
+      />
 
       <div className="z-10 w-full max-w-7xl mx-auto h-full flex items-center justify-center pt-16 lg:pt-0">
 
@@ -99,13 +100,13 @@ export default function Home() {
           {/* 1. Hero Profile / Mission Block */}
           <BentoCard delay={0.2} className="w-full flex flex-col justify-center" hoverColorClass="group-hover:border-cyan-400/50 group-hover:shadow-[0_0_40px_rgba(6,182,212,0.1)]">
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1.5 }}>
-              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tighter mb-4 text-zinc-900 dark:text-white">
+              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tighter mb-4 text-tx-primary">
                 Md Yasin Alam.
-                <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+                <span className="block mt-2 text-accent-pop">
                   AI-Powered Web Architect.
                 </span>
               </h1>
-              <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-tx-muted leading-relaxed font-light">
                 Engineering next-generation AI-integrated systems and high-performance web architectures with cyberpunk precision. This is my digital lab.
               </p>
             </motion.div>
@@ -116,10 +117,10 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full relative group rounded-2xl border border-zinc-200 dark:border-white/10 bg-white/60 dark:bg-black/60 backdrop-blur-md overflow-hidden shadow-2xl hover:border-cyan-500/30 transition-colors duration-500 flex h-[300px]"
+            className="w-full relative group rounded-2xl border border-border-token bg-raised overflow-hidden shadow-2xl hover:border-accent-pop/50 transition-colors duration-500 flex h-[300px]"
           >
             {/* Neon top edge highlight */}
-            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-50" />
+            <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent-pop to-transparent opacity-50" />
             <div className="w-full h-full relative z-10">
               <TerminalIntro />
             </div>
@@ -139,12 +140,12 @@ export default function Home() {
             {pillars.map((pillar, index) => (
               <BentoCard key={pillar.title} delay={0.4 + index * 0.15} className="w-full" hoverColorClass={pillar.color}>
                 <div className="mb-auto">
-                  <div className="mb-4 inline-flex p-3 rounded-xl bg-black/5 dark:bg-zinc-900/80 border border-black/10 dark:border-white/5 shadow-inner">
+                  <div className="mb-4 inline-flex p-3 rounded-xl bg-raised border border-border-token shadow-inner">
                     {pillar.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-2 tracking-tight">{pillar.title}</h3>
+                  <h3 className="text-lg font-semibold text-tx-primary mb-2 tracking-tight">{pillar.title}</h3>
                 </div>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mt-4 flex-grow">
+                <p className="text-xs sm:text-sm text-tx-muted leading-relaxed mt-4 flex-grow">
                   {pillar.description}
                 </p>
                 {pillar.title === "Competitive" && (
@@ -176,12 +177,12 @@ export default function Home() {
             >
               <Link
                 href="/projects"
-                className="group relative w-full flex items-center justify-between p-5 sm:p-8 bg-zinc-100 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
+                className="group relative w-full flex items-center justify-between p-5 sm:p-8 bg-surface border border-border-token rounded-2xl overflow-hidden hover:scale-[1.02] hover:border-accent-pop transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-zinc-200 dark:from-zinc-200 to-zinc-300 dark:to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative z-10 text-zinc-900 text-xl sm:text-2xl font-bold tracking-tight">Access Missions</span>
-                <div className="relative z-10 w-12 h-12 rounded-full bg-zinc-200 dark:bg-black flex items-center justify-center group-hover:translate-x-2 transition-transform duration-300">
-                  <ArrowRight className="w-6 h-6 text-zinc-900 dark:text-white" />
+                <div className="absolute inset-0 bg-accent-pop/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <span className="relative z-10 text-tx-primary text-xl sm:text-2xl font-bold tracking-tight">Access Missions</span>
+                <div className="relative z-10 w-12 h-12 rounded-full bg-raised flex items-center justify-center group-hover:translate-x-2 group-hover:bg-accent-pop transition-all duration-300 text-tx-primary group-hover:text-canvas">
+                  <ArrowRight className="w-6 h-6" />
                 </div>
               </Link>
             </motion.div>
@@ -195,14 +196,14 @@ export default function Home() {
             >
               <Link
                 href="/capabilities"
-                className="group relative w-full flex items-center justify-between p-5 sm:p-8 bg-white dark:bg-black border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden hover:border-cyan-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300"
+                className="group relative w-full flex items-center justify-between p-5 sm:p-8 bg-surface border border-border-token rounded-2xl overflow-hidden hover:border-accent-pop hover:bg-raised transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 dark:from-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <span className="relative z-10 text-zinc-700 dark:text-zinc-300 text-lg sm:text-xl font-medium tracking-wide flex items-center gap-3">
-                  <Terminal className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-pop/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <span className="relative z-10 text-tx-primary text-lg sm:text-xl font-medium tracking-wide flex items-center gap-3">
+                  <Terminal className="w-5 h-5 text-accent-pop" />
                   Open System Interface
                 </span>
-                <div className="relative z-10 text-cyan-600 dark:text-cyan-500 font-mono text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">
+                <div className="relative z-10 text-accent-pop font-mono text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block">
                   {'// execute'}
                 </div>
               </Link>
@@ -211,21 +212,21 @@ export default function Home() {
 
           {/* 6. Social Links */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 w-full mb-8">
-            <Link href="https://github.com/1steve78" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-zinc-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300">
-              <Github className="w-8 h-8 text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white mb-3 transition-colors duration-300" />
-              <span className="text-zinc-700 dark:text-zinc-300 font-medium tracking-wide text-sm sm:text-base">GitHub</span>
+            <Link href="https://github.com/1steve78" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-surface border border-border-token rounded-2xl hover:border-accent-pop hover:bg-raised transition-all duration-300 shadow-accent-glow">
+              <Github className="w-8 h-8 text-tx-muted group-hover:text-accent-pop mb-3 transition-colors duration-300" />
+              <span className="text-tx-primary font-medium tracking-wide text-sm sm:text-base">GitHub</span>
             </Link>
-            <Link href="https://www.linkedin.com/in/md-yasin-alam-895039267" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-blue-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
-              <Linkedin className="w-8 h-8 text-zinc-500 dark:text-zinc-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 mb-3 transition-colors duration-300" />
-              <span className="text-zinc-700 dark:text-zinc-300 font-medium tracking-wide text-sm sm:text-base">LinkedIn</span>
+            <Link href="https://www.linkedin.com/in/md-yasin-alam-895039267" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-surface border border-border-token rounded-2xl hover:border-accent-pop hover:bg-raised transition-all duration-300 hover:shadow-accent-glow">
+              <Linkedin className="w-8 h-8 text-tx-muted group-hover:text-accent-pop mb-3 transition-colors duration-300" />
+              <span className="text-tx-primary font-medium tracking-wide text-sm sm:text-base">LinkedIn</span>
             </Link>
-            <Link href="https://leetcode.com/u/yasin_1/" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-yellow-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(234,179,8,0.15)]">
-              <Code2 className="w-8 h-8 text-zinc-500 dark:text-zinc-400 group-hover:text-yellow-500 dark:group-hover:text-yellow-400 mb-3 transition-colors duration-300" />
-              <span className="text-zinc-700 dark:text-zinc-300 font-medium tracking-wide text-sm sm:text-base">LeetCode</span>
+            <Link href="https://leetcode.com/u/yasin_1/" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-surface border border-border-token rounded-2xl hover:border-accent-pop hover:bg-raised transition-all duration-300 hover:shadow-accent-glow">
+              <Code2 className="w-8 h-8 text-tx-muted group-hover:text-accent-pop mb-3 transition-colors duration-300" />
+              <span className="text-tx-primary font-medium tracking-wide text-sm sm:text-base">LeetCode</span>
             </Link>
-            <Link href="https://codeforces.com/profile/MD_YASIN" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-white/40 dark:bg-zinc-950/40 backdrop-blur-xl border border-zinc-200 dark:border-white/5 rounded-2xl hover:border-red-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)]">
-              <TerminalSquare className="w-8 h-8 text-zinc-500 dark:text-zinc-400 group-hover:text-red-500 dark:group-hover:text-red-400 mb-3 transition-colors duration-300" />
-              <span className="text-zinc-700 dark:text-zinc-300 font-medium tracking-wide text-sm sm:text-base">Codeforces</span>
+            <Link href="https://codeforces.com/profile/MD_YASIN" target="_blank" className="group relative w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-surface border border-border-token rounded-2xl hover:border-accent-pop hover:bg-raised transition-all duration-300 hover:shadow-accent-glow">
+              <TerminalSquare className="w-8 h-8 text-tx-muted group-hover:text-accent-pop mb-3 transition-colors duration-300" />
+              <span className="text-tx-primary font-medium tracking-wide text-sm sm:text-base">Codeforces</span>
             </Link>
           </div>
 

@@ -12,9 +12,7 @@ const executionLogs = [
         entity: "Kalyani Government Engineering College",
         date: "2025 - 2029",
         desc: "Pursuing Engineering degree. Core focus on computer science, algorithms, and practical development.",
-        icon: <Cpu className="w-4 h-4 text-cyan-400" />,
-        color: "text-cyan-400",
-        border: "border-cyan-500/30",
+        icon: <Cpu className="w-4 h-4 text-accent-pop" />,
     },
     {
         id: "compile_12",
@@ -23,9 +21,7 @@ const executionLogs = [
         entity: "Bholananda National Vidyalaya",
         date: "2024 - 2025",
         desc: "Completed Higher Secondary education. Built foundational knowledge in mathematics, physics, and core sciences.",
-        icon: <Code2 className="w-4 h-4 text-yellow-400" />,
-        color: "text-yellow-400",
-        border: "border-yellow-500/30",
+        icon: <Code2 className="w-4 h-4 text-accent-pop" />,
     },
     {
         id: "compile_10",
@@ -34,9 +30,7 @@ const executionLogs = [
         entity: "Bholananda National Vidyalaya",
         date: "2022 - 2023",
         desc: "Completed Secondary education. Developed basic problem-solving skills and academic foundations.",
-        icon: <Database className="w-4 h-4 text-purple-400" />,
-        color: "text-purple-400",
-        border: "border-purple-500/30",
+        icon: <Database className="w-4 h-4 text-accent-pop" />,
     },
 ];
 
@@ -45,37 +39,37 @@ export default function ExecutionTrace() {
         <div className="w-full relative py-8">
             {/* Header section with terminal aesthetic */}
             <div className="flex items-center gap-3 mb-10">
-                <Terminal className="w-6 h-6 text-zinc-400" />
-                <h2 className="text-2xl font-bold tracking-tighter text-zinc-900 dark:text-white">Execution Trace</h2>
-                <div className="flex-1 h-[1px] bg-gradient-to-r from-zinc-200 dark:from-white/10 to-transparent ml-4" />
+                <Terminal className="w-6 h-6 text-tx-muted" />
+                <h2 className="text-2xl font-bold tracking-tighter text-tx-primary">Execution Trace</h2>
+                <div className="flex-1 h-[1px] bg-gradient-to-r from-border-token to-transparent ml-4" />
             </div>
 
             <div className="relative pl-4 sm:pl-8">
                 {/* The main vertical track line */}
-                <div className="absolute top-0 bottom-0 left-[15.5px] sm:left-[31.5px] w-[2px] bg-zinc-200 dark:bg-white/5" />
+                <div className="absolute top-0 bottom-0 left-[15.5px] sm:left-[31.5px] w-[2px] bg-border-token" />
 
                 <div className="flex flex-col gap-12">
                     {executionLogs.map((log, index) => (
                         <motion.div
                             key={log.id}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 80, scale: 0.95 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, margin: "-100px" }}
-                            transition={{ duration: 0.5, delay: index * 0.15 }}
+                            transition={{ type: "spring", mass: 2.5, damping: 20, stiffness: 100, delay: index * 0.15 }}
                             className="relative pl-8 sm:pl-12 group"
                         >
                             {/* Glowing Node Point */}
                             <div
-                                className="absolute left-[-15px] sm:left-[-15px] top-1.5 w-[30px] h-[30px] rounded-full bg-white dark:bg-black border border-zinc-200 dark:border-white/10 flex items-center justify-center z-10 transition-transform duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                                className="absolute left-[-15px] sm:left-[-15px] top-1.5 w-[30px] h-[30px] rounded-full bg-surface border border-border-token flex items-center justify-center z-10 transition-transform duration-300 group-hover:scale-110 shadow-[0_0_10px_rgba(0,0,0,0.5)] group-hover:border-accent-pop"
                             >
-                                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-current" style={{ color: log.color.replace('text-', '') }} />
+                                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-accent-pop" />
                                 {log.icon}
                             </div>
 
                             {/* Glowing Animated Data Packet moving down the line (only for first few to not clutter) */}
                             {index < executionLogs.length - 1 && (
                                 <motion.div
-                                    className={`absolute left-[-1.5px] sm:left-[-1.5px] top-[40px] w-[5px] h-[30px] rounded-full bg-gradient-to-b from-${log.color.split('-')[1]}-500/0 via-${log.color.split('-')[1]}-500/80 to-${log.color.split('-')[1]}-500/0 z-0 blur-[1px]`}
+                                    className={`absolute left-[-1.5px] sm:left-[-1.5px] top-[40px] w-[5px] h-[30px] rounded-full bg-gradient-to-b from-transparent via-accent-pop to-transparent z-0 blur-[1px]`}
                                     animate={{ y: [0, 80], opacity: [0, 1, 0] }}
                                     transition={{
                                         duration: 2,
@@ -87,24 +81,24 @@ export default function ExecutionTrace() {
                             )}
 
                             {/* System Log Entry Content */}
-                            <div className={`p-5 sm:p-6 rounded-2xl bg-white/40 dark:bg-zinc-950/40 border border-zinc-200 dark:border-white/5 backdrop-blur-sm group-hover:bg-zinc-50 dark:group-hover:bg-zinc-900/40 transition-colors duration-300 group-hover:border-${log.color.split('-')[1]}-500/30`}>
+                            <div className={`p-5 sm:p-6 rounded-2xl bg-surface border border-border-token group-hover:bg-raised transition-colors duration-300 group-hover:border-accent-pop/30`}>
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2 sm:mb-1">
-                                    <span className={`font-mono text-xs sm:text-sm font-bold tracking-wider ${log.color}`}>
+                                    <span className={`font-mono text-xs sm:text-sm font-bold tracking-wider text-accent-pop`}>
                                         {log.status}
                                     </span>
-                                    <span className="font-mono text-xs text-zinc-500 mt-1 sm:mt-0">
+                                    <span className="font-mono text-xs text-tx-muted mt-1 sm:mt-0">
                                         {log.date}
                                     </span>
                                 </div>
 
-                                <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white tracking-tight mt-1 mb-1">
+                                <h3 className="text-lg sm:text-xl font-bold text-tx-primary tracking-tight mt-1 mb-1">
                                     {log.title}
                                 </h3>
-                                <h4 className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mb-4">
+                                <h4 className="text-sm font-medium text-tx-muted mb-4">
                                     @ {log.entity}
                                 </h4>
 
-                                <p className="text-sm text-zinc-600 dark:text-zinc-500 leading-relaxed font-light">
+                                <p className="text-sm text-tx-muted leading-relaxed font-light">
                                     {log.desc}
                                 </p>
                             </div>
