@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { TerminalSquare, Code2, Cpu, Wifi, WifiOff } from "lucide-react";
 
 // ---------------------------------------------------------------------------
@@ -29,7 +29,7 @@ const FALLBACK: StatsPayload = {
 // ---------------------------------------------------------------------------
 // Glow animation for live numbers
 // ---------------------------------------------------------------------------
-const glowVariants = {
+const glowVariants: Variants = {
   initial: { opacity: 0, y: 6, scale: 0.92 },
   animate: {
     opacity: 1, y: 0, scale: 1,
@@ -37,7 +37,7 @@ const glowVariants = {
   },
 };
 
-const pulseBadge = {
+const pulseBadge: Variants = {
   animate: {
     boxShadow: [
       "0 0 0px 0px rgba(34,197,94,0)",
