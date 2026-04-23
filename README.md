@@ -1,58 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio OS — Md Yasin Alam
 
-## Getting Started
+> A high-fidelity developer portfolio built with Next.js 16, Framer Motion, and a custom dual-theme design system. Features a live AI chatbot powered by NVIDIA NIM (Llama 3.1), real-time competitive programming stats, and an animated bento-grid projects showcase.
 
-First, run the development server:
+## ✨ Features
+
+- **Dual Theme System** — "Obsidian Ink" (dark) & "Chalk & Brass" (light) with semantic CSS tokens and instant switching
+- **AI Chatbot (Yasin-AI)** — RAG pipeline using LangChain + NVIDIA NIM (Llama 3.1 8B), grounded on resume data via an in-memory vector store
+- **Live Stats Widget** — Fetches real-time ratings from Codeforces, LeetCode (GraphQL), and CodeChef with ISR caching and graceful fallbacks
+- **Bento Projects Grid** — Physics-based 3D tilt cards with Framer Motion, animated orbits, and a staggered reveal
+- **Terminal Intro** — Typewriter-style terminal animation that plays on first load
+- **Encrypted Contact** — Cipher-reveal contact form animation
+- **Magnetic Cursor FX** — Custom cursor that reacts to interactive elements
+- **Global Easter Eggs** — Hidden Konami-code and keyboard shortcuts
+- **Docker Support** — Fully containerised with a multi-stage Dockerfile and `docker-compose.yml`
+
+## 🛠 Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript 5 |
+| Styling | Tailwind CSS v4 + custom CSS tokens |
+| Animations | Framer Motion 12 |
+| AI / LLM | LangChain · NVIDIA NIM (Llama 3.1 8B) |
+| UI Components | Radix UI · shadcn/ui · Lucide React |
+| Containerisation | Docker · Docker Compose |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 20+
+- An [NVIDIA NIM API key](https://build.nvidia.com/) for the AI chatbot
+
+### Local Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Create your environment file
+cp .env.local.example .env.local   # then fill in NVIDIA_API_KEY
+
+# Start the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|---|---|
+| `NVIDIA_API_KEY` | API key for NVIDIA NIM (Llama 3.1) — required for the AI chatbot |
 
-## Docker
+## 🐳 Docker
 
-Build the image:
-
-```bash
-docker build -t portfolio .
-```
-
-Run the container:
-
-```bash
-docker run --rm -p 3000:3000 portfolio
-```
-
-Open [http://localhost:3000](http://localhost:3000) to view the app.
-
-Or run it with Docker Compose:
+Build and run with a single command:
 
 ```bash
 docker compose up --build
 ```
 
-## Learn More
+Or manually:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Build the image
+docker build -t portfolio .
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run the container
+docker run --rm -p 3000:3000 --env-file .env.local portfolio
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/
+│   ├── api/
+│   │   ├── chat/route.ts       # Streaming AI chatbot endpoint (RAG + NVIDIA NIM)
+│   │   └── stats/route.ts      # Live CP stats (Codeforces, LeetCode, CodeChef)
+│   ├── page.tsx                # Root page — composes all sections
+│   └── template.tsx            # Page transition wrapper
+├── components/
+│   ├── AgencyHero.tsx          # Hero section with animated headline
+│   ├── ProjectsSection.tsx     # Bento-grid projects showcase
+│   ├── SkillsSection.tsx       # Skills & expertise grid
+│   ├── LiveStatsWidget.tsx     # Real-time competitive programming stats
+│   ├── AIChatbot.tsx           # Floating AI chat interface
+│   ├── TerminalIntro.tsx       # Boot-sequence terminal animation
+│   ├── EncryptedContact.tsx    # Cipher-reveal contact section
+│   ├── ExecutionTrace.tsx      # Animated code/trace visual
+│   ├── Navbar.tsx              # Top navigation with theme toggle
+│   ├── ThemeToggle.tsx         # Light/dark theme switcher
+│   ├── MagneticWrapper.tsx     # Magnetic cursor physics wrapper
+│   ├── CursorFx.tsx            # Custom cursor component
+│   └── GlobalEasterEggs.tsx    # Hidden keyboard shortcuts & Konami code
+└── data/
+    └── resume.ts               # Resume content + vector store for RAG
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev      # Start development server with hot reload
+npm run build    # Build production bundle
+npm run start    # Start production server
+npm run lint     # Run ESLint
+```
+
+## 🌐 Deployment
+
+Deploy instantly on [Vercel](https://vercel.com) — just connect your repository and add the `NVIDIA_API_KEY` environment variable in the project settings.
+
+---
+
+Built by **Md Yasin Alam** — [GitHub](https://github.com/MD-YASIN) · [Codeforces](https://codeforces.com/profile/MD_YASIN) · [LeetCode](https://leetcode.com/yasin_1)
